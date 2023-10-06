@@ -1,0 +1,102 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    background-color: black;
+}
+
+.galaxy {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    animation: galaxy-animation 60s linear infinite;
+}
+
+.star, .comet, .planet, .spacecraft {
+    position: absolute;
+    background-color: white;
+}
+
+.star {
+    width: 1px;
+    height: 1px;
+    animation: star-animation 5s linear infinite;
+}
+
+.comet {
+    width: 10px;
+    height: 2px;
+    animation: comet-animation 10s linear infinite;
+}
+
+.planet {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #ffcc00;
+    animation: planet-animation 20s linear infinite;
+}
+
+.spacecraft {
+    width: 50px;
+    height: 20px;
+    background-color: transparent;
+    border-radius: 50%;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: spacecraft-animation 8s linear infinite;
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    border-bottom: 50px solid #00ffcc;
+    border-top: 20px solid transparent;
+}
+
+
+@keyframes star-animation {
+    0% {
+        opacity: 0;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(100vh);
+    }
+}
+
+@keyframes comet-animation {
+    0% {
+        left: 0;
+        transform: translateY(0);
+    }
+    100% {
+        left: 100%;
+        transform: translateY(100vh);
+    }
+}
+
+@keyframes planet-animation {
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+    100% {
+        transform: translateY(100vh) rotate(360deg);
+    }
+}
+
+@keyframes spacecraft-animation {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-100vh);
+    }
+}
+
+@keyframes galaxy-animation {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-200vh);
+    }
+}
